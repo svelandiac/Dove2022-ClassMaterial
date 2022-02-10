@@ -1,7 +1,6 @@
 {
   "scripts": {
-    "clean": "rm -rf ./dist",
-    "build": "yarn clean && npx tsc",
+    "build": "npx tsc",
     "start": "yarn build && node --es-module-specifier-resolution=node ./dist/index.js 0",
     "send": "yarn build && node --es-module-specifier-resolution=node ./dist/index.js 1"
   },
