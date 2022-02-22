@@ -14,7 +14,7 @@ const args = process.argv.slice(2);
 // entre el codigo que estes editando y el codigo que quieres que se califique.
 const main = async (isSubmit: boolean) => {
   // Obtener el nombre de la clase de hoy
-  const className = "feb10";
+  const className = "feb22";
 
   // Formar la ruta donde estara la compilacion del archivo sobre el que hayas trabajado
   let route = "./classes/" + className;
