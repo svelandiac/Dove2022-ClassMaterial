@@ -28,14 +28,14 @@ class SubmitClassWork extends IClassWork {
     // b. Editar la funcion imOfAge() que esta abajo, debe tener el siguiente comportamiento:
     //      - Recibe como parametro 'age', el cual es un <number> e indica tu edad. La funcion debe devolver un tipo de dato <boolean>.
     //      - Si 'age' es mayor o igual a 18, la funcion retornara 'true'.
-    //      - Si 'age' es menor a 18, la funcion retornada 'false'.
+    //      - Si 'age' es menor a 18, la funcion retornara 'false'.
     // c. Crear una nueva variable 'imOfAgeCalculated', la cual va a tener como valor el resultado de llamar a la funcion 'this.imOfAge(myCurrentAge)'.
     // d. El resultado de la funcion coincide con lo que pusiste inicialmente en el punto a?
 
-    const myFirstPet = null;
-    const myCurrentAge = null;
-    const imOfAge = null;
-    const currentDate = null;
+    const myFirstPet = 'Tobias';
+    const myCurrentAge = 20;
+    const imOfAge = true;
+    const currentDate = new Date();
 
     // No toques la siguiente linea, es para calificarte :)
     this.evaluate(myFirstPet, myCurrentAge, imOfAge, currentDate);
@@ -43,7 +43,11 @@ class SubmitClassWork extends IClassWork {
 
   // Esta es la funcion que debes editar en el punto b.
   imOfAge(age: number): boolean {
-    return true;
+    if ( age >= 18 ) {
+      return true;
+    } else {
+      return false;
+    }
   }
 
   // Por favor no tocar esta funcion
