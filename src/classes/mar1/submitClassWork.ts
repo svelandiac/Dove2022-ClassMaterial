@@ -44,7 +44,13 @@ class SubmitClassWork extends IClassWork {
     //
 
     // No toques la siguiente linea, es para calificarte :)
+    this.test();
     this.evaluate();
+  }
+
+  // Retorna un número aleatorio entre min (incluido) y max (excluido)
+  getRandomArbitrary(min: number, max: number) {
+    return Math.floor(Math.random() * (max - min) + min);
   }
 
   // Funcion del punto 1: No recibe parametros, y devuelve un array con 23 numeros generados aletatoriamente entre 1 y 365.
