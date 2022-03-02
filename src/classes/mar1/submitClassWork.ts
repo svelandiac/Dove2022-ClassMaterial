@@ -65,7 +65,29 @@ class SubmitClassWork extends IClassWork {
 
   // Funcion del punto 4: No recibe parametros, usara la funcion del punto 3 para las siguientes repeticiones: < 10, 100, 1000, 10000 >
   test(): void {
-    return;
+    console.log(`10 repeticiones: ${this.getSuccessCases(10)}/10`);
+    console.log(`100 repeticiones: ${this.getSuccessCases(100)}/100`);
+    console.log(`1000 repeticiones: ${this.getSuccessCases(1000)}/1000`);
+    console.log(`10000 repeticiones: ${this.getSuccessCases(10000)}/10000`);
+  }
+
+  calculateProbability(): number {
+    const successCases = [];
+    const iterations = 100;
+    const repetitions = 1000;
+    for (let i = 0; i < iterations; i++) {
+      successCases.push(this.getSuccessCases(repetitions));
+    }
+    const probability = successCases.reduce(
+      (previous, current) => (previous + current) / repetitions
+    );
+    const percentage = Math.round(probability * 100 * 100) / 100;
+    console.log(
+      `La probabilidad calculada del experimento es de ${percentage.toFixed(
+        2
+      )}%`
+    );
+    return percentage;
   }
 
   // Por favor no tocar esta funcion
@@ -73,7 +95,10 @@ class SubmitClassWork extends IClassWork {
   evaluate(): void {
     let score = 0;
     try {
-      
+      const percentageCalculated = this.calculateProbability();
+      if (percentageCalculated < 60 && percentageCalculated > 40) {
+        score += 5.0;
+      }
     } catch (error) {
       console.log(error);
     }
